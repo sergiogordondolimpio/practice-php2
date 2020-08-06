@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    {# estos block de twig ayuda a dividir la pagina en varias partes
+    y se extiende a la pagina que lo quiera utilizar
+    Ae puede usar varios:
+    <title>{% block title %}{% endblock %}</title>
+        <h1>{{ block('title') }}</h1>
+    {% block body %}{% endblock %}
+     #}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{#} 
+    extiende de layout las partes de las paginas y le agregamos
+    este bloque
+#}
+{% extends "layout.twig" %}
+
+{% block content %}
+    {#}
+    Con twig ya no se puede hacer como php, y no se puede hacer
+    toda la logica es solo para visualizar
+        ?php
+            for($idx = 0; $idx < count($employees); $idx++){
+                printElements($employees[$idx]);
+            }
+        ?>
+    #}
+    <h1>{{name}}</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.name }}</li>
+        {#// esto es un if para reconocer si, hay o no hay imagen en la DB.
+          {% if job.fileName == '' %}
+                <h5>No image founded :/</h5>
+              {% else %}
+                //carga la imagen obteniendo el nombre de la base de datos
+                <imgsrc="uploads/{{ job.fileName }}"alt="image"style="width:120px; heigh:90px;">
+          {% endif %}#}
+        {% endfor %}
+    </ul>
+{% endblock %}

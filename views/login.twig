@@ -1,0 +1,15 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <h1>Login</h1>
+    <div class="alert alert-primary" role="alert">
+    {{ responseMessage }}
+    </div>
+    <form action="/practice-php2/auth" method="post" enctype="multipart/form-data">
+        <label for="" >Name</label>
+        <input type="text" name="name">
+        <label for="">Password</label>
+        <input type="text" name="password">
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}
