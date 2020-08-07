@@ -61,7 +61,7 @@ $capsule->addConnection([
 
 //usando Dotenv
 $capsule->addConnection([
-    'driver'    =>  $_ENV['DB_DRIVER'],
+    'driver'    =>  $_ENV['DB_DRIVE'],
     'host'      =>  $_ENV['DB_HOST'],
     'port'      =>  $_ENV['DB_PORT'],
     'database'  =>  $_ENV['DB_NAME'],
