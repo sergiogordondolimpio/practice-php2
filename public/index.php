@@ -63,7 +63,6 @@ $capsule->addConnection([
 $capsule->addConnection([
     'driver'    => 'mysql',
     'host'      =>  $_ENV['DB_HOST'],
-    'port'      => '3306',
     'database'  =>  $_ENV['DB_NAME'],
     'username'  =>  $_ENV['DB_USER'],
     'password'  =>  $_ENV['DB_PASS'],
@@ -97,39 +96,40 @@ $map = $routerContainer->getMap();
 //.htaccess, / es la direccion inicial, ../index.php
 //es el archivo que ejecuta
 
-$map->get('index', '/practice-php2/', [
+//saque el practice-php2/ para que trabaje en localhost de postgres
+$map->get('index', '/', [
     'controller' => 'App\Controllers\IndexController',
     'action' => 'indexAction'
 ]);
-$map->get('form', '/practice-php2/employee/add', [
+$map->get('form', '/employee/add', [
     'controller' => 'App\Controllers\EmployeesController',
     'action' => 'getAddEmployeeAction'
 ]);
-$map->post('saveEmployee', '/practice-php2/employee/add', [
+$map->post('saveEmployee', '/employee/add', [
     'controller' => 'App\Controllers\EmployeesController',
     'action' => 'getAddEmployeeAction'
 ]);
-$map->get('user', '/practice-php2/user/add', [
+$map->get('user', '/user/add', [
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getAddUserAction'
 ]);
-$map->post('saveUser', '/practice-php2/user/add', [
+$map->post('saveUser', '/user/add', [
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getAddUserAction'
 ]);
-$map->get('loginForm', '/practice-php2/login', [
+$map->get('loginForm', '/login', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLogin'
 ]);
-$map->get('logout', '/practice-php2/logout', [
+$map->get('logout', '/logout', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLogout'
 ]);
-$map->post('auth', '/practice-php2/auth', [
+$map->post('auth', '/auth', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'postLogin'
 ]);
-$map->get('admin', '/practice-php2/admin', [
+$map->get('admin', '/admin', [
     'controller' => 'App\Controllers\AdminController',
     'action' => 'getIndex',
     'auth' => true
