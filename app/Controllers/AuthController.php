@@ -25,7 +25,7 @@ class AuthController extends BaseController{
                 //variable superglobal para verificar el usuario
                 $_SESSION['userId'] = $user->id; 
                 //es para redireccionar
-                return new RedirectResponse('/practice-php2/admin');
+                return new RedirectResponse('/admin');
             }else{
                 $responseMessage = 'Bad credentials';
             }
@@ -40,6 +40,6 @@ class AuthController extends BaseController{
 
     public function getLogout(){
         unset($_SESSION['userId']); 
-        return new RedirectResponse('/practice-php2/login');
+        return new RedirectResponse('/login');
     }
 }
